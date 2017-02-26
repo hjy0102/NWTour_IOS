@@ -9,37 +9,39 @@
 import Foundation
 import MapKit
 import Contacts
+// import SwiftyJSON
 
 class Artwork: NSObject, MKAnnotation {
     
     /// Title for annotation view.
-    let title: String?
+    let name: String?
     
     /// Location name for subtitle.
-    let locationName: String
+    let address: String
     
     /// Discipline of the artwork.
-    let discipline: String
+    let descriptn: String
     
     /// Coordinate data of the artwork location.
     let coordinate: CLLocationCoordinate2D
     
     /// Subtitle for annotation view.
     var subtitle: String? {
-        return locationName
+        return address
     }
     
     /// Initializer.
     ///
     /// - Parameters:
-    ///   - title: Name of the artwork.
-    ///   - locationName: Location of the artwork.
-    ///   - discipline: Category of the artwork.
-    ///   - coordinate: Longitude and latitude of the artwork.
-    init(title: String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D) {
-        self.title = title
-        self.locationName = locationName
-        self.discipline = discipline
+    ///   - Name: Name of the artwork.
+    ///   - Address: Location of the artwork.
+    ///   - Descriptn: Category of the artwork.
+    ///   - coordinate
+    ///   - Y
+    init(name: String, address: String, descriptn: String, coordinate: CLLocationCoordinate2D) {
+        self.name = name
+        self.address = address
+        self.descriptn = descriptn
         self.coordinate = coordinate
         
         super.init()
@@ -54,7 +56,7 @@ class Artwork: NSObject, MKAnnotation {
             let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDict)
             
             let mapItem = MKMapItem(placemark: placemark)
-            mapItem.name = title
+            mapItem.name = name
             
             return mapItem
         } else {
@@ -66,14 +68,16 @@ class Artwork: NSObject, MKAnnotation {
     ///
     /// - Returns: THe color for a specific discipline.
     func pinColor() -> UIColor {
-        switch discipline {
-        case "Sculpture", "Plaque":
-            return MKPinAnnotationView.redPinColor()
-        case "Mural", "Monument":
-            return MKPinAnnotationView.purplePinColor()
-        default:
-            return MKPinAnnotationView.greenPinColor()
-        }
+        return MKPinAnnotationView.redPinColor()
+        
+//        switch discipline {
+//        case "Sculpture", "Plaque":
+//            return MKPinAnnotationView.redPinColor()
+//        case "Mural", "Monument":
+//            return MKPinAnnotationView.purplePinColor()
+//        default:
+//            return MKPinAnnotationView.greenPinColor()
+        //        }
     }
     
     /// Parse JSON data to Artwork model.
@@ -81,13 +85,15 @@ class Artwork: NSObject, MKAnnotation {
     /// - Parameter json: JSON data to be parsed.
     /// - Returns: Artwork model.
     static func fromJSON(json: [JSONValue]) -> Artwork? {
-        let locationName = json[12].string
-        let discipline = json[15].string
+        let aname     = json[9].string
+        let address   = json[4].string
+        let descriptn = json[10].string
         
-        let latitude = (json[18].string! as NSString).doubleValue
-        let longitude = (json[19].string! as NSString).doubleValue
+        let latitude  = (json[19].string! as NSString).doubleValue
+        let longitude = (json[20].string! as NSString).doubleValue
+        
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
-        return Artwork(title: json[16].string ?? "", locationName: locationName!, discipline: discipline!, coordinate: coordinate)
+        return Artwork(name: aname ?? "", address: address!, descriptn: descriptn!, coordinate: coordinate)
     }
 }
