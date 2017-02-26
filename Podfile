@@ -6,6 +6,7 @@ target 'NWTour' do
   use_frameworks!
 
   # Pods for NWTour
+    pod 'SwiftyJSON'
 
   target 'NWTourTests' do
     inherit! :search_paths

@@ -37,7 +37,6 @@ class Artwork: NSObject, MKAnnotation {
     ///   - Address: Location of the artwork.
     ///   - Descriptn: Category of the artwork.
     ///   - coordinate
-    ///   - Y
     init(name: String, address: String, descriptn: String, coordinate: CLLocationCoordinate2D) {
         self.name = name
         self.address = address
@@ -70,14 +69,6 @@ class Artwork: NSObject, MKAnnotation {
     func pinColor() -> UIColor {
         return MKPinAnnotationView.redPinColor()
         
-//        switch discipline {
-//        case "Sculpture", "Plaque":
-//            return MKPinAnnotationView.redPinColor()
-//        case "Mural", "Monument":
-//            return MKPinAnnotationView.purplePinColor()
-//        default:
-//            return MKPinAnnotationView.greenPinColor()
-        //        }
     }
     
     /// Parse JSON data to Artwork model.
