@@ -14,7 +14,7 @@
 		64C369611E630D7C006EAD3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64C3695F1E630D7C006EAD3F /* LaunchScreen.storyboard */; };
 		64C3698A1E630E83006EAD3F /* PublicArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C369891E630E83006EAD3F /* PublicArt.swift */; };
 		64C3698C1E631010006EAD3F /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C3698B1E631010006EAD3F /* JSON.swift */; };
-		64C3698E1E6311A8006EAD3F /* PublicArt.json in Resources */ = {isa = PBXBuildFile; fileRef = 64C3698D1E6311A8006EAD3F /* PublicArt.json */; };
+		64C369931E633895006EAD3F /* PublicArt.json in Resources */ = {isa = PBXBuildFile; fileRef = 64C369911E633700006EAD3F /* PublicArt.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,7 @@
 		64C369721E630D7D006EAD3F /* NWTourUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NWTourUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64C369891E630E83006EAD3F /* PublicArt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicArt.swift; sourceTree = "<group>"; };
 		64C3698B1E631010006EAD3F /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
-		64C3698D1E6311A8006EAD3F /* PublicArt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PublicArt.json; path = ../../../PublicArt.json; sourceTree = "<group>"; };
+		64C369911E633700006EAD3F /* PublicArt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PublicArt.json; path = ../../../PublicArt.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +133,7 @@
 		64C369881E630E17006EAD3F /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				64C3698D1E6311A8006EAD3F /* PublicArt.json */,
+				64C369911E633700006EAD3F /* PublicArt.json */,
 				64C369621E630D7C006EAD3F /* Info.plist */,
 				64C3698B1E631010006EAD3F /* JSON.swift */,
 			);
@@ -247,7 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64C3698E1E6311A8006EAD3F /* PublicArt.json in Resources */,
+				64C369931E633895006EAD3F /* PublicArt.json in Resources */,
 				64C369611E630D7C006EAD3F /* LaunchScreen.storyboard in Resources */,
 				64C3695E1E630D7C006EAD3F /* Assets.xcassets in Resources */,
 				64C3695C1E630D7C006EAD3F /* Main.storyboard in Resources */,
